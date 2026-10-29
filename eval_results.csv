@@ -1,0 +1,440 @@
+zip,mode,open_total,top1_type,top1_count,type_ok,count_ok,summary
+11368,raw,117,UNSANITARY CONDITION,11,True,False,"There are 117 open requests.
+
+The three most common complaint types are:
+UNSANITARY CONDITION: PESTS (7)
+HEAT/HOT WATER: ENTIRE BUILDING (7)
+ELECTRIC: NO LIGHTING (4)
+
+It appears that there are multiple complaints about unsanitary conditions, heat/hot water issues, and electric outages in the area."
+11218,raw,204,Street Condition,45,True,False,"There are 204 open requests.
+
+The three most common complaint types are:
+1. Street Condition: Blocked - Construction (14)
+2. HEAT/HOT WATER: ENTIRE BUILDING (8)
+3. Dirty Condition: Trash (8)
+
+It appears that there is a high number of complaints related to street conditions, particularly construction-related blockages, and heat/hot water issues in residential buildings."
+11372,raw,91,HEAT/HOT WATER,18,True,False,"There are 91 open service requests in ZIP code 11372.
+
+HEAT/HOT WATER: ENTIRE BUILDING (8)
+UNSANITARY CONDITION: PESTS (2)
+UNSANITARY CONDITION: GARBAGE/RECYCLING STORAGE (2)
+
+It appears that there is a high number of complaints related to heat/hot water issues in the entire building, which may indicate a larger problem with the building's infrastructure."
+11208,raw,180,UNSANITARY CONDITION,23,True,False,"There are 180 open requests.
+
+The three most common complaint types are:
+1. UNSANITARY CONDITION: PESTS (14)
+2. HEAT/HOT WATER: APARTMENT ONLY (8)
+3. HEAT/HOT WATER: ENTIRE BUILDING (7)
+
+It appears that there is a high number of complaints related to pests and heat/hot water issues in the 11208 ZIP code."
+10003,raw,146,HEAT/HOT WATER,33,True,False,"146 open requests.
+
+HEAT/HOT WATER: ENTIRE BUILDING (14)
+HEAT/HOT WATER: APARTMENT ONLY (8)
+Noise (7)
+
+There are multiple complaints about heat/hot water issues, but it's unclear if they are related to the same building or multiple buildings."
+10466,raw,192,PLUMBING,36,True,False,"192 open requests.
+
+The three most common complaint types are:
+HEAT/HOT WATER: APARTMENT ONLY (14)
+PLUMBING: WATER SUPPLY (14)
+UNSANITARY CONDITION: PESTS (13)
+
+It appears that there is an unusual number of complaints related to heat/hot water issues, with 14 requests for apartment-only issues and 14 requests for building-wide issues."
+10462,raw,254,HEAT/HOT WATER,102,True,False,"The total number of open requests is 254.
+
+The three most common complaint types are:
+HEAT/HOT WATER: ENTIRE BUILDING (at least 34)
+HEAT/HOT WATER: APARTMENT ONLY (at least 23)
+HEAT/HOT WATER: ENTIRE BUILDING (at least 34)
+
+It appears that there is an unusual number of heat/hot water complaints, with at least 68 requests related to this issue."
+10458,raw,306,HEAT/HOT WATER,79,True,False,"306 open requests.
+
+HEAT/HOT WATER: ENTIRE BUILDING (14), UNSANITARY CONDITION: PESTS (14), Noise - Residential: (9)
+
+It appears that there is a high number of complaints related to heat/hot water issues in entire buildings, which may indicate a larger problem with the building's infrastructure."
+11201,raw,178,For Hire Vehicle Complaint,43,True,False,"There are 178 open requests.
+
+The three most common complaint types are:
+For Hire Vehicle Complaint: Driver Complaint - Non Passenger (14)
+Noise: Construction (7)
+HEAT/HOT WATER: ENTIRE BUILDING (6)
+
+It appears that there is an unusually high number of complaints about For Hire Vehicle drivers, with 14 separate complaints about non-passenger drivers."
+10025,raw,179,HEAT/HOT WATER,26,True,False,"179 open requests.
+
+HEAT/HOT WATER: ENTIRE BUILDING (14)
+Noise: Construction (13)
+Noise - Vehicle: Engine Idling (2)
+
+I couldn't determine if there's anything unusual in the data."
+11215,raw,182,HEAT/HOT WATER,17,True,False,"There are 182 open requests.
+
+The three most common complaint types are:
+HEAT/HOT WATER: APARTMENT ONLY (14)
+Street Light Condition: Street Light Out (9)
+Noise: Construction (7)
+
+It appears that there is a high number of complaints related to heat/hot water issues in apartment buildings."
+11225,raw,208,HEAT/HOT WATER,33,True,False,"The total number of open requests is 208.
+
+The three most common complaint types are:
+HEAT/HOT WATER: 34 requests
+UNSANITARY CONDITION: 23 requests
+PLUMBING: 14 requests
+
+It appears that there is a high number of complaints related to heat/hot water issues, which may indicate a larger problem with the building's infrastructure."
+10031,raw,208,HEAT/HOT WATER,63,True,False,"The total number of open requests is 208.
+
+The three most common complaint types are:
+HEAT/HOT WATER: ENTIRE BUILDING (14)
+HEAT/HOT WATER: APARTMENT ONLY (13)
+Rodent: Rat Sighting (4)
+
+It appears that there is an unusual number of heat/hot water complaints, with 14 requests for entire building heat/hot water issues."
+11235,raw,171,HEAT/HOT WATER,21,True,False,"171 open requests.
+
+HEAT/HOT WATER: ENTIRE BUILDING (14), Illegal Parking: Blocked Hydrant (7), Noise - Residential: Banging/Pounding (6)
+
+I couldn't determine the most common complaint type due to the large number of different types."
+10002,raw,146,HEAT/HOT WATER,27,True,False,"There are 146 open requests.
+
+The three most common complaint types are:
+HEAT/HOT WATER: ENTIRE BUILDING (14)
+Noise: Construction (8)
+Graffiti: Graffiti (6)
+
+It appears that there are multiple reports of street lights being out, with 7 reports in total."
+11238,raw,252,UNSANITARY CONDITION,33,True,False,"The total number of open requests is 252.
+
+The three most common complaint types are:
+HEAT/HOT WATER: ENTIRE BUILDING (14)
+UNSANITARY CONDITION: PESTS (8)
+UNSANITARY CONDITION: GARBAGE/RECYCLING STORAGE (8)
+
+There are multiple complaints about helicopters, with 12 complaints about Noise - Helicopter: Other."
+11212,raw,290,UNSANITARY CONDITION,53,True,False,"There are 290 open requests.
+
+The three most common complaint types are:
+HEAT/HOT WATER: ENTIRE BUILDING (14)
+UNSANITARY CONDITION: MOLD (13)
+APPLIANCE: ELECTRIC/GAS RANGE (8)
+
+It appears that there is an unusually high number of complaints related to heat/hot water issues in the entire building."
+11101,raw,143,Graffiti,11,True,False,"There are 143 open requests.
+
+The most common complaint type is For Hire Vehicle Complaint with 8 requests.
+The second most common complaint type is Graffiti with 8 requests.
+The third most common complaint type is Noise with 7 requests.
+
+There is an unusual number of For Hire Vehicle Complaints, with 8 requests, which is a significant portion of the total open requests."
+10453,raw,262,UNSANITARY CONDITION,50,True,False,"The total number of open requests is 262.
+
+The three most common complaint types are:
+HEAT/HOT WATER: ENTIRE BUILDING (14)
+UNSANITARY CONDITION: PESTS (13)
+PLUMBING: BATHTUB/SHOWER (8)
+
+It appears that there is a high number of complaints related to heat/hot water issues in entire buildings, which may indicate a larger problem with the building's infrastructure."
+11226,raw,388,HEAT/HOT WATER,79,True,False,"There are 388 open service requests in ZIP code 11226.
+
+The three most common complaint types are:
+HEAT/HOT WATER: 24 requests
+UNSANITARY CONDITION: 23 requests
+Noise: 7 requests
+
+It appears that there is a high number of complaints related to heat/hot water issues, with 24 requests, but I am unsure if this is the highest count as the data only shows 200 of 388 requests."
+11368,counts,117,UNSANITARY CONDITION,11,True,True,"Total open requests: 117
+
+UNSANITARY CONDITION: 11
+Maintenance or Facility: 10
+HEAT/HOT WATER: 10
+
+There is no unusual information in the provided data."
+11218,counts,204,Street Condition,45,True,True,"Total open requests: 204
+
+Street Condition: 45
+HEAT/HOT WATER: 17
+Dirty Condition: 14
+
+There is no unusual information in the provided data."
+11372,counts,91,HEAT/HOT WATER,18,True,True,"Total open requests: 91
+
+HEAT/HOT WATER: 18
+UNSANITARY CONDITION: 6
+Consumer Complaint: 5
+
+There is no clear indication of anything unusual in the data provided."
+11208,counts,180,UNSANITARY CONDITION,23,True,True,"Total open requests: 180
+
+The most common complaint types are:
+- UNSANITARY CONDITION: 23
+- HEAT/HOT WATER: 15
+- Illegal Dumping: 13
+
+There is no clear third most common complaint type, as the counts are tied."
+10003,counts,146,HEAT/HOT WATER,33,True,True,"Total open requests: 146
+HEAT/HOT WATER: 33
+Noise: 12
+PLUMBING: 11
+There is no unusual trend in the data provided."
+10466,counts,192,PLUMBING,36,True,True,"Total open requests: 192
+
+The most common complaint types are:
+- UNSANITARY CONDITION: 24
+- HEAT/HOT WATER: 22
+- PLUMBING: 36
+
+It's unclear if PLUMBING is the most common complaint type, as it has the highest count, but it's not the first one listed.
+
+There is no unusual information in the data provided."
+10462,counts,254,HEAT/HOT WATER,102,True,True,"Total open requests: 254
+
+HEAT/HOT WATER: 102
+PLUMBING: 16
+UNSANITARY CONDITION: 13
+
+There is no unusual information in the provided data."
+10458,counts,306,HEAT/HOT WATER,79,True,True,"Total open requests: 306
+
+HEAT/HOT WATER: 79
+UNSANITARY CONDITION: 40
+DOOR/WINDOW: 28
+
+There is no clear indication of anything unusual in the data provided."
+11201,counts,178,For Hire Vehicle Complaint,43,True,True,"Total open requests: 178
+
+For Hire Vehicle Complaint: 43
+Noise: 14
+HEAT/HOT WATER: 12
+
+There is no unusual information in the provided data."
+10025,counts,179,HEAT/HOT WATER,26,True,True,"There are 179 open service requests in ZIP code 10025.
+
+The most common complaint types are:
+HEAT/HOT WATER: 26
+UNSANITARY CONDITION: 19
+Noise: 19
+
+It is unclear what the fifth most common complaint type is, as there are multiple complaints with the same count."
+11215,counts,182,HEAT/HOT WATER,17,True,True,"Total open requests: 182
+
+HEAT/HOT WATER: 17
+Street Light Condition: 15
+Noise: 11
+
+There is no unusual information in the provided data."
+11225,counts,208,HEAT/HOT WATER,33,True,True,"Total open requests: 208
+
+HEAT/HOT WATER: 33
+UNSANITARY CONDITION: 31
+PLUMBING: 16
+
+There is no unusual information in the provided data."
+10031,counts,208,HEAT/HOT WATER,63,True,True,"Total open requests: 208
+
+HEAT/HOT WATER: 63
+PLUMBING: 19
+UNSANITARY CONDITION: 17
+
+There is no unusual information provided in the data."
+11235,counts,171,HEAT/HOT WATER,21,True,True,"Total open requests: 171
+
+HEAT/HOT WATER: 21
+UNSANITARY CONDITION: 14
+Lead: 11
+
+There is no unusual information in the provided data."
+10002,counts,146,HEAT/HOT WATER,27,True,True,"Total open requests: 146
+HEAT/HOT WATER: 27
+Outdoor Dining: 12
+Noise: 9
+There is no unusual information in the provided data."
+11238,counts,252,UNSANITARY CONDITION,33,True,True,"Total open requests: 252
+UNSANITARY CONDITION: 33
+HEAT/HOT WATER: 31
+Noise - Helicopter: 19
+There is no clear indication of anything unusual in the data provided."
+11212,counts,290,UNSANITARY CONDITION,53,True,True,"Total open requests: 290
+
+The most common complaint types are:
+- UNSANITARY CONDITION: 53
+- HEAT/HOT WATER: 46
+- PLUMBING: 22
+
+There is no clear third most common complaint type, as PAINT/PLASTER and DOOR/WINDOW are tied with 19 requests each.
+
+It's unusual that there are 10 open requests for both Noise and General complaints."
+11101,counts,143,Graffiti,11,True,True,"Total open requests: 143
+
+Graffiti: 11
+Noise: 10
+Dirty Condition: 9
+
+There is no unusual information in the provided data."
+10453,counts,262,UNSANITARY CONDITION,50,True,True,"Total open requests: 262
+
+The most common complaint types are:
+- UNSANITARY CONDITION: 50
+- HEAT/HOT WATER: 44
+- PAINT/PLASTER: 25
+
+There is no clear third most common complaint type, as the next highest count is 23 for WATER LEAK.
+
+It's unusual that the count for Dirty Condition is 7, which is tied with Street Condition for the 9th most common complaint type."
+11226,counts,388,HEAT/HOT WATER,79,True,True,"Total open requests: 388
+
+HEAT/HOT WATER: 79
+UNSANITARY CONDITION: 59
+DOOR/WINDOW: 29
+
+There is no clear indication of anything unusual in the data provided."
+11368,raw_types,117,UNSANITARY CONDITION,11,True,False,"There are 117 open requests.
+
+The three most common complaint types are:
+HEAT/HOT WATER (14)
+UNSANITARY CONDITION (13)
+ELECTRIC (6)
+
+It appears that there are multiple complaints about food establishments, with 6 requests."
+11218,raw_types,204,Street Condition,45,False,False,"There are 204 open requests.
+
+The three most common complaint types are:
+HEAT/HOT WATER (14)
+Illegal Parking (13)
+Dirty Condition (12)
+
+It appears that there is a high number of complaints related to heat/hot water issues, which may indicate a larger problem in the area."
+11372,raw_types,91,HEAT/HOT WATER,18,True,False,"There are 91 open requests in ZIP code 11372.
+
+HEAT/HOT WATER is the most common complaint type with 13 requests.
+UNSANITARY CONDITION is the second most common complaint type with 4 requests.
+Noise is the third most common complaint type with 3 requests.
+
+It appears that there is a high number of complaints related to heat/hot water issues, with 13 requests, which may indicate a widespread problem in the area."
+11208,raw_types,180,UNSANITARY CONDITION,23,True,False,"There are 180 open service requests in ZIP code 11208.
+
+The three most common complaint types are:
+HEAT/HOT WATER (14)
+UNSANITARY CONDITION (13)
+ILLEGAL DUMPING (12)
+
+It appears that there is a high number of complaints related to heat/hot water issues, which may indicate a larger problem with building maintenance or infrastructure in the area."
+10003,raw_types,146,HEAT/HOT WATER,33,True,False,"146 open requests.
+
+HEAT/HOT WATER: 23
+Noise: 13
+Dirty Condition: 10
+
+It appears that heat/hot water issues are the most common complaint type in this ZIP code."
+10466,raw_types,192,PLUMBING,36,True,False,"192 open requests.
+
+PLUMBING (14), HEAT/HOT WATER (14), UNSANITARY CONDITION (10)
+
+It appears that there is an unusually high number of plumbing-related complaints."
+10462,raw_types,254,HEAT/HOT WATER,102,True,False,"There are 254 open requests.
+
+HEAT/HOT WATER is the most common complaint type with 54 requests, followed by Noise with 13 requests, and Illegal Parking with 7 requests.
+
+I am unsure of the exact count for some complaint types, but it appears that HEAT/HOT WATER is significantly more common than any other complaint type.
+
+It is unusual that HEAT/HOT WATER is the most common complaint type, with 54 requests, which is more than 20% of the total number of open requests."
+10458,raw_types,306,HEAT/HOT WATER,79,True,False,"306 open requests.
+
+HEAT/HOT WATER: 24
+Noise: 6
+Illegal Parking: 4
+
+It appears that there is an unusually high number of complaints about heat/hot water issues in this ZIP code."
+11201,raw_types,178,For Hire Vehicle Complaint,43,True,False,"There are 178 open requests.
+
+For Hire Vehicle Complaints: 21
+Noise: 14
+HEAT/HOT WATER: 13
+
+It appears that there is an unusually high number of For Hire Vehicle Complaints in this ZIP code."
+10025,raw_types,179,HEAT/HOT WATER,26,True,False,"179 open requests.
+
+HEAT/HOT WATER: 17
+Noise: 14
+Rodent: 6
+
+It appears that there is an unusually high number of complaints about heat/hot water issues."
+11215,raw_types,182,HEAT/HOT WATER,17,True,False,"There are 182 open requests.
+
+The three most common complaint types are:
+HEAT/HOT WATER (9)
+Street Light Condition (9)
+Noise (8)
+
+It appears that there is a high number of complaints related to heat/hot water issues, which may indicate a widespread problem in the area."
+11225,raw_types,208,HEAT/HOT WATER,33,True,False,"There are 208 open service requests in ZIP code 11225.
+
+HEAT/HOT WATER is the most common complaint type with 34 requests.
+UNSANITARY CONDITION is the second most common complaint type with 23 requests.
+PLUMBING is the third most common complaint type with 17 requests.
+
+It appears that there is a high number of complaints related to heat/hot water issues, with 34 requests, which may indicate a widespread problem in the area."
+10031,raw_types,208,HEAT/HOT WATER,63,True,False,"There are 208 open requests.
+
+HEAT/HOT WATER is the most common complaint type with 24 occurrences, followed by UNSANITARY CONDITION with 13 occurrences, and Rodent with 6 occurrences.
+
+I am unsure of the exact count for some complaint types, but it appears that HEAT/HOT WATER is significantly more common than any other complaint type.
+
+One unusual aspect is that there are 24 complaints about HEAT/HOT WATER, which is a very high number compared to other complaint types."
+11235,raw_types,171,HEAT/HOT WATER,21,True,False,"171 open requests.
+
+HEAT/HOT WATER: 13
+Illegal Parking: 12
+Noise - Residential: 4
+
+It appears that there is an unusually high number of complaints about heat/hot water issues in this ZIP code."
+10002,raw_types,146,HEAT/HOT WATER,27,True,False,"146 open requests.
+
+HEAT/HOT WATER: 23
+Noise: 13
+Graffiti: 6
+
+There are multiple complaints about For Hire Vehicle Complaints, but it's unclear if they are the 4th most common complaint type."
+11238,raw_types,252,UNSANITARY CONDITION,33,True,False,"Total open requests: 252
+
+Most common complaint types:
+HEAT/HOT WATER: 13
+UNSANITARY CONDITION: 13
+Noise - Helicopter: 9
+
+It appears that there is an unusually high number of complaints about noise from helicopters in this ZIP code."
+11212,raw_types,290,UNSANITARY CONDITION,53,True,False,"There are 290 open requests in ZIP code 11212.
+
+HEAT/HOT WATER: 23
+UNSANITARY CONDITION: 17
+DOOR/WINDOW: 10
+
+It appears that heat/hot water issues are the most common complaint type in this ZIP code."
+11101,raw_types,143,Graffiti,11,True,False,"143 open requests.
+
+Graffiti: 9
+Noise - Residential: 8
+For Hire Vehicle Complaint: 4
+
+It appears that there is a high concentration of graffiti complaints in this ZIP code."
+10453,raw_types,262,UNSANITARY CONDITION,50,True,False,"There are 262 open requests in ZIP code 10453.
+
+HEAT/HOT WATER is the most common complaint type with 24 requests.
+UNSANITARY CONDITION is the second most common complaint type with 23 requests.
+PLUMBING is the third most common complaint type with 17 requests.
+
+It appears that there is a high number of complaints related to heat/hot water issues, with 24 requests, which may indicate a widespread problem in the area."
+11226,raw_types,388,HEAT/HOT WATER,79,True,False,"There are 388 open requests in ZIP code 11226.
+
+The three most common complaint types are:
+HEAT/HOT WATER with 24 requests
+UNSANITARY CONDITION with 14 requests
+Noise with 7 requests
+
+It appears that there is an unusually high number of complaints about heat/hot water issues in this ZIP code."

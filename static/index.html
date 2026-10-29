@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>311 Triage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root { --bg:#f6f7f9; --fg:#1b1f24; --muted:#6b7280; --line:#d9dde3; --accent:#1f4fd8; --card:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#14171c; --fg:#e8eaed; --muted:#9aa3af; --line:#2c323b; --accent:#6c96ff; --card:#1b2027; } }
+  * { box-sizing: border-box; }
+  body { margin:0; font:14px/1.45 system-ui, sans-serif; background:var(--bg); color:var(--fg); }
+  header { display:flex; gap:24px; align-items:center; padding:10px 20px; border-bottom:1px solid var(--line); background:var(--card); }
+  header h1 { font-size:16px; margin:0; }
+  nav button { background:none; border:0; padding:6px 10px; color:var(--muted); cursor:pointer; font:inherit; }
+  nav button.on { color:var(--accent); border-bottom:2px solid var(--accent); }
+  main { padding:16px 20px; }
+  .filters { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:10px; align-items:center; }
+  input, select, button.act { font:inherit; padding:6px 8px; border:1px solid var(--line); border-radius:6px; background:var(--card); color:var(--fg); }
+  button.act { background:var(--accent); color:#fff; border-color:var(--accent); cursor:pointer; }
+  .layout { display:grid; grid-template-columns: minmax(0,2fr) minmax(300px,1fr); gap:16px; }
+  .tablewrap { overflow:auto; max-height:70vh; border:1px solid var(--line); border-radius:8px; background:var(--card); }
+  table { border-collapse:collapse; width:100%; }
+  th, td { text-align:left; padding:6px 8px; border-bottom:1px solid var(--line); white-space:nowrap; max-width:260px; overflow:hidden; text-overflow:ellipsis; }
+  th { position:sticky; top:0; background:var(--card); }
+  tbody tr { cursor:pointer; } tbody tr:hover { background:rgba(31,79,216,.08); }
+  #panel { border:1px solid var(--line); border-radius:8px; background:var(--card); padding:12px; min-height:200px; }
+  #panel h3 { margin:0 0 8px; font-size:15px; }
+  .kv { color:var(--muted); } .kv b { color:var(--fg); font-weight:600; }
+  .box { margin-top:12px; padding-top:10px; border-top:1px solid var(--line); }
+  pre { white-space:pre-wrap; background:var(--bg); padding:8px; border-radius:6px; border:1px solid var(--line); }
+  .err { color:#c0392b; } .hidden { display:none; } .muted { color:var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <h1>311 Triage</h1>
+  <nav>
+    <button id="t-req" class="on">Requests</button>
+    <button id="t-audit">Audit log</button>
+    <button id="t-onto">Ontology</button>
+  </nav>
+</header>
+<main>
+  <section id="v-req">
+    <div class="filters">
+      <select id="borough"><option value="">All boroughs</option></select>
+      <select id="status"><option value="">All statuses</option></select>
+      <input id="q" placeholder="Search request text, e.g. Pothole" size="30">
+      <input id="zip" placeholder="ZIP" size="7">
+      <label><input type="checkbox" id="open_only"> Open only</label>
+      <button class="act" id="go">Apply</button>
+      <span id="count" class="muted"></span>
+    </div>
+    <div class="layout">
+      <div class="tablewrap"><table>
+        <thead><tr id="head"></tr></thead>
+        <tbody id="rows"></tbody>
+      </table></div>
+      <div id="panel"><span class="muted">Select a request.</span></div>
+    </div>
+  </section>
+  <section id="v-audit" class="hidden"><div class="tablewrap"><table>
+    <thead><tr><th>Time (UTC)</th><th>Action</th><th>Request</th><th>From</th><th>To</th><th>Note</th></tr></thead>
+    <tbody id="audit"></tbody></table></div></section>
+  <section id="v-onto" class="hidden"><pre id="onto"></pre></section>
+</main>
+<script>
+const $ = id => document.getElementById(id);
+function el(tag, text, cls) { const e = document.createElement(tag); if (text !== undefined) e.textContent = text; if (cls) e.className = cls; return e; }
+async function api(path, opts) {
+  const r = await fetch(path, opts);
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.detail || r.statusText);
+  return j;
+}
+let facets = null;
+
+async function loadFacets() {
+  facets = await api("/api/facets");
+  for (const b of facets.boroughs) $("borough").appendChild(new Option(b, b));
+  for (const s of facets.statuses) $("status").appendChild(new Option(s, s));
+}
+
+let sortKey = "created_date", sortDir = "desc";
+const COLS = [["unique_key", "Key"], ["request_text", "Request"], ["borough", "Borough"], ["incident_zip", "ZIP"],
+              ["agency", "Agency"], ["assigned_agency", "Assigned"], ["status", "Status"], ["created_date", "Created"]];
+
+function renderHead() {
+  const tr = $("head"); tr.replaceChildren();
+  for (const [k, label] of COLS) {
+    const th = el("th", label + (k === sortKey ? (sortDir === "asc" ? " \u25B2" : " \u25BC") : ""));
+    th.style.cursor = "pointer"; th.title = "Click to sort";
+    th.onclick = () => {
+      if (sortKey === k) sortDir = sortDir === "asc" ? "desc" : "asc"; else { sortKey = k; sortDir = "asc"; }
+      renderHead(); loadRequests();
+    };
+    tr.appendChild(th);
+  }
+}
+
+async function loadRequests() {
+  const p = new URLSearchParams();
+  for (const k of ["borough", "status", "q", "zip"]) { const v = $(k).value.trim(); if (v) p.set(k, v); }
+  if ($("open_only").checked) p.set("open_only", "true");
+  p.set("sort", sortKey); p.set("order", sortDir);
+  const data = await api("/api/requests?" + p);
+  $("count").textContent = data.total + " matching, showing " + data.items.length;
+  const tb = $("rows"); tb.replaceChildren();
+  for (const r of data.items) {
+    const tr = el("tr");
+    for (const [c] of COLS) tr.appendChild(el("td", r[c]));
+    tr.onclick = () => selectRequest(r.unique_key);
+    tb.appendChild(tr);
+  }
+}
+
+async function selectRequest(key) {
+  const o = await api("/api/requests/" + encodeURIComponent(key));
+  const r = o.request, p = $("panel"); p.replaceChildren();
+  p.appendChild(el("h3", r.request_text));
+  const kv = (k, v) => { const d = el("div", "", "kv"); d.append(k + ": "); d.appendChild(el("b", v)); p.appendChild(d); };
+  kv("Key", r.unique_key); kv("Status", r.status); kv("Created", r.created_date);
+  kv("Original agency", o.agency ? o.agency.agency + " (" + o.agency.agency_name + ")" : r.agency);
+  kv("Currently assigned", o.assigned_agency ? o.assigned_agency.agency + " (" + o.assigned_agency.agency_name + ")" : r.assigned_agency);
+  kv("Neighborhood", r.incident_zip + (o.neighborhood ? " (" + o.neighborhood.request_count + " requests, " + o.neighborhood.borough + ")" : ""));
+  if (r.reassign_note) kv("Note", r.reassign_note);
+
+  const a = el("div", "", "box"); a.appendChild(el("b", "Action: Reassign Request"));
+  const sel = el("select"); for (const g of facets.agencies) sel.appendChild(new Option(g.agency + " - " + g.agency_name, g.agency));
+  sel.value = r.assigned_agency;
+  const note = el("input"); note.placeholder = "Note (optional)"; note.style.width = "100%"; note.style.marginTop = "6px";
+  const btn = el("button", "Reassign", "act"); btn.style.marginTop = "6px";
+  const msg = el("div", "", "muted");
+  btn.onclick = async () => {
+    try {
+      await api("/api/actions/reassign-request", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ unique_key: r.unique_key, new_agency: sel.value, note: note.value }) });
+      await loadRequests(); await selectRequest(r.unique_key);
+    } catch (e) { msg.textContent = e.message; msg.className = "err"; }
+  };
+  a.append(el("br"), sel, note, btn, msg); p.appendChild(a);
+
+  const f = el("div", "", "box"); f.appendChild(el("b", "Function: Summarize ZIP " + r.incident_zip));
+  const mode = el("select"); mode.appendChild(new Option("counts (SQL counts, LLM writes)", "counts")); mode.appendChild(new Option("raw (LLM sees rows)", "raw"));
+  const run = el("button", "Summarize", "act"); const out = el("pre", "");
+  out.className = "hidden";
+  run.onclick = async () => {
+    run.disabled = true; out.className = ""; out.textContent = "Working...";
+    try {
+      const j = await api("/api/functions/summarize-neighborhood", { method: "POST", headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ zip: r.incident_zip, mode: mode.value }) });
+      out.textContent = j.summary;
+    } catch (e) { out.textContent = e.message; out.className = "err"; }
+    run.disabled = false;
+  };
+  f.append(el("br"), mode, document.createTextNode(" "), run, out); p.appendChild(f);
+}
+
+async function loadAudit() {
+  const items = await api("/api/audit"); const tb = $("audit"); tb.replaceChildren();
+  for (const a of items) { const tr = el("tr"); for (const c of ["ts", "action", "object_key", "old_value", "new_value", "note"]) tr.appendChild(el("td", a[c])); tb.appendChild(tr); }
+}
+async function loadOnto() { $("onto").textContent = JSON.stringify(await api("/api/ontology"), null, 2); }
+
+function show(tab) {
+  for (const t of ["req", "audit", "onto"]) { $("v-" + t).classList.toggle("hidden", t !== tab); $("t-" + t).classList.toggle("on", t === tab); }
+  if (tab === "audit") loadAudit(); if (tab === "onto") loadOnto();
+}
+for (const t of ["req", "audit", "onto"]) $("t-" + t).onclick = () => show(t);
+$("go").onclick = loadRequests;
+for (const id of ["q", "zip"]) $(id).addEventListener("keydown", e => { if (e.key === "Enter") loadRequests(); });
+renderHead();
+loadFacets().then(loadRequests).catch(e => { $("count").textContent = e.message; $("count").className = "err"; });
+</script>
+</body>
+</html>
