@@ -4,17 +4,16 @@
 Dispatchers at a city operations desk face thousands of open 311 requests. Some sit with the wrong agency, and there is no quick way to see what is happening in one ZIP code. This project builds the smallest useful fix: one triage view with a write-back reassign action and a short, grounded summary per ZIP. Evaluation showed that a local 8B model cannot count requests reliably, so counting moved into SQL and the model only writes.
 
 ## What it is
-A small operational app organized around an ontology: typed objects, links between them, write-back actions, and an LLM function that works on objects. It runs locally (DuckDB, FastAPI, a local Llama model through Ollama). The table maps each piece to its Palantir Foundry and AIP counterpart.
+A small operational app organized around an ontology: typed objects, links between them, write-back actions, and an LLM function that works on objects. It runs locally (DuckDB, FastAPI, a local Llama model through Ollama). The table lists the main components.
 
-| This project | Foundry / AIP equivalent |
+| Component | Role |
 |---|---|
-| `out/*.csv` from NYC Open Data, loaded into DuckDB | Datasets and pipeline |
-| `ontology.py`: Request, Agency, Neighborhood | Object types in the Ontology |
-| Links Request to Agency, Request to Neighborhood | Link types |
-| `POST /api/actions/reassign-request` with validation and an audit log | Action type with write-back |
-| `static/index.html`: filter, table, object panel, reassign form | Workshop module |
-| `POST /api/functions/summarize-neighborhood` | AIP Logic function |
-| `eval.py`: 20 ZIPs scored against ground truth computed from the data | AIP Evals |
+| `prep_311.py` | Pulls recent NYC 311 requests and writes the CSV datasets |
+| `ontology.py` | Defines the objects (Request, Agency, Neighborhood), links, action, and function |
+| `app.py` | API: object queries, the reassign action, the summary function |
+| `static/index.html` | Triage UI: filters, sortable table, object panel, reassign form |
+| `llm.py` | Local model client (Ollama) |
+| `eval.py` | Scores 20 ZIPs against ground truth computed from the data |
 
 
 

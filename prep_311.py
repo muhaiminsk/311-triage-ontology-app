@@ -1,4 +1,4 @@
-"""Pull a recent slice of NYC 311 data and shape it into Foundry-ready CSVs.
+"""Pull a recent slice of NYC 311 data and shape it into CSV datasets.
 
 Usage:  python prep_311.py            (needs: pandas, internet access)
 Output: out/requests.csv, out/agencies.csv, out/neighborhoods.csv, out/eval_cases.csv
@@ -36,7 +36,7 @@ df["closed_date"] = pd.to_datetime(df["closed_date"], errors="coerce")
 df["descriptor"] = df["descriptor"].fillna("")
 df["request_text"] = (df["complaint_type"] + ": " + df["descriptor"]).str.strip(": ")
 df["hours_to_close"] = ((df["closed_date"] - df["created_date"]).dt.total_seconds() / 3600).round(1)
-# Property that the Foundry "Reassign Request" action will edit. Starts equal to agency.
+# Property that the "Reassign Request" action will edit. Starts equal to agency.
 df["assigned_agency"] = df["agency"]
 df["reassign_note"] = ""
 df = df.drop_duplicates(subset=["unique_key"])

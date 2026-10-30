@@ -1,7 +1,6 @@
 """The ontology, declared in one place: object types, link types, actions, functions.
 
-This mirrors how Palantir Foundry models a domain. Each piece below has a Foundry
-counterpart (see README). The app reads table names and keys from here.
+The app reads table names and keys from here.
 """
 
 OBJECT_TYPES = {
