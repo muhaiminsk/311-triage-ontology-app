@@ -16,7 +16,7 @@ A small operational app organized around an ontology: typed objects, links betwe
 | `POST /api/functions/summarize-neighborhood` | AIP Logic function |
 | `eval.py`: 20 ZIPs scored against ground truth computed from the data | AIP Evals |
 
-Built without Foundry access (Palantir AIP waitlist). The structure is designed to port over.
+
 
 ## Screenshots
 
